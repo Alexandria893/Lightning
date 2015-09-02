@@ -5,26 +5,31 @@ int endY = 150;
 void setup()
 {
   size(300,300);
-  strokeWeight();
-  background();
+  strokeWeight(1);
+  background(127);
 }
 void draw()
 {
-stroke((int)(math.random()*255),(int)(math.random()*255),(int)(math.random()*255))
-while (end<300)
-	endX = startX +(int)(math.random()*9));
-	/*-set the stroke()color of the lightning bolt to some random value using Math.random()
--a while loop that repeats the following until the endX is off the screen:
-set endX to startX plus a random integer from 0 to 9
-set endY to startY plus a random integer from -9 to 9
-draw a line() with endpoints startX,startY,endX,endY
-set startX to equal endX and startY to equal endY
-void mousePressed() needs to set startX,startY,endX,endY back to their original values.
-You will need to modify index.html to customize your website with it's own title, header and footer. When you are happy with your program, push your finished project up to GitHub
-The final step is to submit the URL for your website via the "drop box" for the assignment on School Loop. Don't hesitate to ask for help if your aren't sure how something is suppose to work.
-}*/
+	//stroke((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+	stroke(255,0,255);
+	while (endX<300)
+	{
+		endX = startX +(int)(Math.random()*9);
+		endY = startY +(int)(Math.random()*9)-9;
+		line(startX,startY,endX,endY);	
+		startX=endX;
+		startY=endY;
+	}
+}
+
 void mousePressed()
 {
 
+	startX = 0;
+	startY = 150;
+	endX = 0;
+	endY = 150;
+
 }
+	
 
